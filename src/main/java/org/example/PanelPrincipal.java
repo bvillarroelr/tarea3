@@ -9,8 +9,11 @@ public class PanelPrincipal extends JPanel {
     private PanelExpendedor exp;
     private JFrame frame;
     public PanelPrincipal () {
+        this.setSize(800,600);
+        this.setBackground(Color.ORANGE);
         exp = new PanelExpendedor();
         com = new PanelComprador();
+
     }
     public void paint (Graphics g) {
         super.paint(g);

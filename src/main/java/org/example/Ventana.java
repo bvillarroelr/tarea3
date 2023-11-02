@@ -7,13 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 
 public class Ventana extends JFrame {
-
+    private PanelPrincipal mp;
     public Ventana() {
         this.setLayout(new BorderLayout());
-        setTitle("Mi Ventana");
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        PanelPrincipal Principal = new PanelPrincipal();
+        mp = new PanelPrincipal();
+        this.add(mp,BorderLayout.CENTER);
+        this.setTitle("Mi Ventana");
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
 }
