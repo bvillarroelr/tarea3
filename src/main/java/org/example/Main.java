@@ -4,7 +4,10 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-
+        PanelPrincipal PP = new PanelPrincipal();
+    }
+}
+/*
         // Monedas
         Moneda m1500 = new Moneda1500();
         Moneda m1000 = new Moneda1000();
@@ -51,3 +54,4 @@ public class Main {
         }
     }
 }
+ */
