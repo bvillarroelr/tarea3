@@ -4,7 +4,7 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-        PanelPrincipal PP = new PanelPrincipal();
+        Ventana V = new Ventana();
     }
 }
 /*
