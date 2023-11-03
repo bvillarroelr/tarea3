@@ -9,8 +9,6 @@ public class PanelPrincipal extends JPanel {
     private PanelExpendedor exp;
     private JFrame frame;
     public PanelPrincipal () {
-        this.setLayout(new GridLayout(3,2));
-        this.setSize(300,100);
         exp = new PanelExpendedor();
         com = new PanelComprador();
     }
