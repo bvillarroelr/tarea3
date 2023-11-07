@@ -14,6 +14,7 @@ public class Ventana extends JFrame {
         this.add(mp,BorderLayout.CENTER);
         bp = new PanelBotones();
         this.add(bp, BorderLayout.SOUTH);
+        this.add(new JLabel("Saldo: $"), BorderLayout.NORTH);
         this.setTitle("Mi Ventana");
         this.setSize(800, 600);
         this.setVisible(true);

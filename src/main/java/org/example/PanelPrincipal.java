@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 public class PanelPrincipal extends JPanel {
     private PanelComprador com;
     private PanelExpendedor exp;
-    private JFrame frame;
     public PanelPrincipal () {
+        this.setBackground(Color.yellow);
         exp = new PanelExpendedor();
         com = new PanelComprador();
     }
