@@ -11,10 +11,12 @@ public class PanelPrincipal extends JPanel {
         this.setBackground(Color.white);
         com = new PanelComprador(c);
         exp = new PanelExpendedor(x);
+        this.add(com);
+        this.add(exp);
     }
     public void paint (Graphics g) {
         super.paint(g);
-        com.paint(g);
         exp.paint(g);
+        // borré com.paint(g) porque mostraba 2 veces el JLabel de saldo
     }
 }

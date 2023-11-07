@@ -4,7 +4,7 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-        Moneda mil = new Moneda1000();
+        Moneda mil = new Moneda1500();
         Expendedor xp = new Expendedor(3);
         Comprador c = new Comprador(mil, Detalles.COCA, xp);
         Ventana V = new Ventana(c,xp);
