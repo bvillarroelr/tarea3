@@ -7,10 +7,10 @@ import javax.swing.JFrame;
 public class PanelPrincipal extends JPanel {
     private PanelComprador com;
     private PanelExpendedor exp;
-    public PanelPrincipal () {
-        this.setBackground(Color.yellow);
-        exp = new PanelExpendedor();
-        com = new PanelComprador();
+    public PanelPrincipal(Comprador c, Expendedor x) {
+        this.setBackground(Color.white);
+        com = new PanelComprador(c);
+        exp = new PanelExpendedor(x);
     }
     public void paint (Graphics g) {
         super.paint(g);

@@ -4,8 +4,9 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
-    public PanelExpendedor(){
-        ;
+    private Expendedor xp;
+    public PanelExpendedor(Expendedor x){
+        xp = x;
     }
     @Override
     public void paint(Graphics g) {
