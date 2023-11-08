@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelComprador extends JPanel {
-    public PanelComprador(Comprador c) {
+    public PanelComprador() {
         setLayout(new BorderLayout());
 
         JPanel rightPanel = new JPanel();
