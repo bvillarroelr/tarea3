@@ -6,16 +6,15 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
     private PanelPrincipal mp;
-    private PanelBotones bp;
     public Ventana(Comprador c, Expendedor x) {
-        this.setLayout(new BorderLayout());
+
         mp = new PanelPrincipal(c,x);
+        this.add(mp);
+
+        this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.add(mp,BorderLayout.CENTER);
-        bp = new PanelBotones();
-        this.add(bp, BorderLayout.SOUTH);
-        this.setTitle("Mi Ventana");
-        this.setSize(800, 600);
+        this.setTitle("Maquina Expendedora");
+        this.setSize(1000, 600);
         this.setVisible(true);
     }
 }
