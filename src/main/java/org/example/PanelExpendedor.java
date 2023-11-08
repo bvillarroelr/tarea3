@@ -6,6 +6,7 @@ import java.awt.*;
 public class PanelExpendedor extends JPanel {
     private Expendedor e = new Expendedor(3);
     public PanelExpendedor(){
+        e = new Expendedor(3); // Generalizar
     }
     @Override
     public void paint(Graphics g) {
@@ -23,5 +24,24 @@ public class PanelExpendedor extends JPanel {
         g.setColor(Color.BLACK);
         g.fillRect(340,465,120,80);
         g.fillRect(520,465,120,80);
+
+        // Rellenamos los depósitos (visualmente)
+        for(int i = 0; i<40*3; i+=40) {                      // i < numProducto
+            // CocaCola
+            g.setColor(Color.RED);
+            g.fillRect(330 + i,25,20,50);
+            // Fanta
+            g.setColor(Color.ORANGE);
+            g.fillRect(330 + i,115,20,50);
+            // Sprite
+            g.setColor(Color.GREEN);
+            g.fillRect(330 + i,205,20,50);
+            // Super8
+            g.setColor(Color.BLACK);
+            g.fillRect(330 + i,295,12,52);
+            // Snickers
+            g.setColor(Color.darkGray);
+            g.fillRect(330 + i,400,15,35);
+        }
     }
 }
