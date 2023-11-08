@@ -17,7 +17,7 @@ public class Comprador {
     public Comprador(Moneda m, Detalles cualProducto, Expendedor exp) {
         Producto p = exp.comprarProducto(m, cualProducto);
         int temp = 0;
-
+        // Debemos lograr que se defina cual producto comprar por medio de eventos del mouse, que interactúen con los botones de la GUI, por lo que esto seguramente lo cambiaremos
         if (cualProducto == Detalles.COCA || cualProducto == Detalles.SPRITE || cualProducto == Detalles.FANTA ||
                 cualProducto == Detalles.SNICKER || cualProducto == Detalles.SUPER8) {
             // El ciclo verifica si hay vuelto en el expendedor.
