@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
     private PanelPrincipal mp;
-    public Ventana(Comprador c, Expendedor x) {
+    public Ventana() {
 
-        mp = new PanelPrincipal(c,x);
+        mp = new PanelPrincipal();
         this.add(mp);
 
         this.setResizable(false);

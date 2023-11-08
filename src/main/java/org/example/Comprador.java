@@ -5,45 +5,25 @@ package org.example;
  */
 public class Comprador {
     private String consumiste;
-    private int vuelto;
-
-    /**
-     * Constructor de la clase Comprador.
-     *
-     * @param m             La moneda para realizar la compra.
-     * @param cualProducto  El Producto a comprar.
-     * @param exp           El expendedor en el que se realizara la compra.
-     */
-    public Comprador(Moneda m, Detalles cualProducto, Expendedor exp) {
+    private Deposito<Moneda> Saldo;
+    private Moneda1500 m1;
+    private Moneda1000 m2;
+    public Comprador(){
+        this.Saldo = new Deposito<>();
+        Saldo.addElemento(m1);
+        Saldo.addElemento(m2);
+    }
+    public int Comprar(Moneda m, Detalles cualProducto, Expendedor exp) {
         Producto p = exp.comprarProducto(m, cualProducto);
         int temp = 0;
-        // Debemos lograr que se defina cual producto comprar por medio de eventos del mouse, que interactúen con los botones de la GUI, por lo que esto seguramente lo cambiaremos
+        int vuelto = 0;
         if (cualProducto == Detalles.COCA || cualProducto == Detalles.SPRITE || cualProducto == Detalles.FANTA ||
                 cualProducto == Detalles.SNICKER || cualProducto == Detalles.SUPER8) {
-            // El ciclo verifica si hay vuelto en el expendedor.
             while (exp.getVuelto() != null) {
                 temp += 100;
             }
-            consumiste = p.consumir();
             vuelto = temp;
         }
-    }
-
-    /**
-     * Getter del Vuelto.
-     *
-     * @return La cantidad de vuelto.
-     */
-    public int cuantoVuelto() {
         return vuelto;
-    }
-
-    /**
-     * Getter del producto consumido.
-     *
-     * @return el producto consumido.
-     */
-    public String queConsumiste() {
-        return consumiste;
     }
 }

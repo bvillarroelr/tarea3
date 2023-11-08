@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 public class PanelPrincipal extends JPanel {
-    private PanelComprador com;
-    private PanelExpendedor exp;
-    public PanelPrincipal(Comprador c, Expendedor x) {
+    private Comprador c = new Comprador();
+    private Expendedor e = new Expendedor(3);
+    private PanelComprador com = new PanelComprador(c);
+    private PanelExpendedor exp = new PanelExpendedor(e);
+    public PanelPrincipal() {
         this.setLayout(new BorderLayout());
         this.setBackground(Color.white);
-        com = new PanelComprador(c);
-        exp = new PanelExpendedor(x);
         this.add(com,BorderLayout.EAST);
         this.add(exp, BorderLayout.CENTER);
     }
