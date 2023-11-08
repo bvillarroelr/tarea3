@@ -2,10 +2,12 @@ package org.example;
 /**
  * Metodo Main para probar expendedores y compradores
  */
+
 public class Main {
     public static void main(String[] args) {
         Ventana V = new Ventana();
     }
+
 }
 /*
         // Monedas
