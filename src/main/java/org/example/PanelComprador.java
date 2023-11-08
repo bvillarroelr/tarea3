@@ -9,12 +9,11 @@ public class PanelComprador extends JPanel {
         this.c = c; // No sé como hacer que esto se vea en pantalla desde PanelPrincipal
 
         setLayout(new BorderLayout());
-        Component espacio = Box.createRigidArea(new Dimension(0, 10));
 
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
-        midrightPanel.setLayout(new GridLayout(2, 3));
+        midrightPanel.setLayout(new GridLayout(3, 2));
 
         rightPanel.add(new JLabel(" Saldo: $"+c.cuantoVuelto())); // Aqui podemos agregar las opciones de monedas
         rightPanel.add(midrightPanel);

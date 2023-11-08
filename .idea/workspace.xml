@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d63d093-6b01-4f11-9d5d-f507ab1085f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelBotones.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelComprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelComprador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelExpendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelExpendedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ventana.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +43,26 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Benjamín/OneDrive/Universidad/2023/4to semestre/Programación II/Tareas/tarea3&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="tarea3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
