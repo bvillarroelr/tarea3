@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
-    private Comprador c = new Comprador();
     private Expendedor e = new Expendedor(3);
     public PanelExpendedor(){
     }

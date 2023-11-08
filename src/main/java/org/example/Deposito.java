@@ -38,7 +38,10 @@ public class Deposito<T> {
             return null;
         }
     }
-
+    public T seeElement(int i){
+        if (!listaElementos.isEmpty()) { return listaElementos.get(i);}
+        else return null;
+        }
     /**
      * Obtiene el número de elementos almacenados en el depósito.
      *

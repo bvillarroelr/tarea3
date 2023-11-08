@@ -10,6 +10,8 @@ public class Comprador {
     private Moneda1000 m2;
     public Comprador(){
         this.Saldo = new Deposito<>();
+        this.m1 = new Moneda1500();
+        this.m2 = new Moneda1000();
         Saldo.addElemento(m1);
         Saldo.addElemento(m2);
     }
@@ -25,5 +27,12 @@ public class Comprador {
             vuelto = temp;
         }
         return vuelto;
+    }
+    public int getSaldo(){
+        int monto = 0;
+        for(int i = 0; i<Saldo.getSize();i++) {
+            monto += Saldo.seeElement(i).getValor();
+        }
+        return monto;
     }
 }

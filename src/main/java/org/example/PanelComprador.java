@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelComprador extends JPanel {
+    private Comprador c = new Comprador();
     public PanelComprador() {
         setLayout(new BorderLayout());
 
@@ -12,7 +13,7 @@ public class PanelComprador extends JPanel {
         rightPanel.setLayout(new GridLayout(3, 1));
         midrightPanel.setLayout(new GridLayout(3, 2));
 
-        rightPanel.add(new JLabel(" Saldo: $N/A")); // Aqui podemos agregar las opciones de monedas
+        rightPanel.add(new JLabel(" Saldo: $" + c.getSaldo())); // Aqui podemos agregar las opciones de monedas
         rightPanel.add(midrightPanel);
         midrightPanel.add(new JButton("COCACOLA"));
         midrightPanel.add(new JButton("FANTA"));
