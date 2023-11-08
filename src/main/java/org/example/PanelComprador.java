@@ -6,12 +6,11 @@ import java.awt.*;
 public class PanelComprador extends JPanel {
     public PanelComprador(Comprador c) {
         setLayout(new BorderLayout());
-        Component espacio = Box.createRigidArea(new Dimension(0, 10));
 
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
-        midrightPanel.setLayout(new GridLayout(2, 3));
+        midrightPanel.setLayout(new GridLayout(3, 2));
 
         rightPanel.add(new JLabel(" Saldo: $N/A")); // Aqui podemos agregar las opciones de monedas
         rightPanel.add(midrightPanel);
