@@ -7,6 +7,7 @@ public class Expendedor {
     private Deposito<Bebida> depCoca, depSprite, depFanta;
     private Deposito<Dulce> depSuper8, depSnickers;
     private Deposito<Moneda> monVu;
+    private int numProductos;
 
     /**
      * Constructor de la clase Expendedor.
@@ -14,6 +15,7 @@ public class Expendedor {
      * @param numProductos Describe cuanos productos contiene de cada producto.
      */
     public Expendedor(int numProductos) {
+        this.numProductos = numProductos; // Seguramente lo usaremos cuando tengamos que rellenar la máquina expendedora, puede ser a través de un for
         depCoca = new Deposito();
         depSprite = new Deposito();
         depFanta = new Deposito();
@@ -107,5 +109,12 @@ public class Expendedor {
             Moneda a = new Moneda100();
             monVu.addElemento(a);
         }
+    }
+
+    public int getNumProductos() {
+        return numProductos;
+    }
+    public void setNumProductos(int x) {
+        this.numProductos = x;
     }
 }
