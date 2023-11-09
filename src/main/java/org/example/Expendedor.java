@@ -92,9 +92,9 @@ public class Expendedor {
     }
 
     /**
-     * Método privado para calcular el vuelto de una compra de bebida (Optimiza el Codigo).
+     * Método privado para calcular el vuelto de una compra de Coca cola
      *
-     * @param m La moneda con la que se pagó.
+     * @param m El saldo que es un deposito de monedas con el que se pagó.
      */
     private void calcularVueltoCOCA(Deposito<Moneda> m) {
         int suma = 0;
@@ -106,11 +106,10 @@ public class Expendedor {
             monVu.addElemento(a);
         }
     }
-
     /**
-     * Método privado para calcular el vuelto de una compra de dulce (Optimiza el Codigo).
+     * Método privado para calcular el vuelto de una compra de Sprite
      *
-     * @param m La moneda con la que se pagó.
+     * @param m El saldo que es un deposito de monedas con el que se pagó.
      */
     private void calcularVueltoSPRITE(Deposito<Moneda> m) {
         int suma = 0;
@@ -122,6 +121,11 @@ public class Expendedor {
             monVu.addElemento(a);
         }
     }
+    /**
+     * Método privado para calcular el vuelto de una compra de Fanta
+     *
+     * @param m El saldo que es un deposito de monedas con el que se pagó.
+     */
     private void calcularVueltoFANTA(Deposito<Moneda> m) {
         int suma = 0;
         for (int i = 0; i<m.getSize(); i++){
@@ -132,6 +136,11 @@ public class Expendedor {
             monVu.addElemento(a);
         }
     }
+    /**
+     * Método privado para calcular el vuelto de una compra de Snicker
+     *
+     * @param m El saldo que es un deposito de monedas con el que se pagó.
+     */
     private void calcularVueltoSNICKER(Deposito<Moneda> m) {
         int suma = 0;
         for (int i = 0; i<m.getSize(); i++){
@@ -142,6 +151,11 @@ public class Expendedor {
             monVu.addElemento(a);
         }
     }
+    /**
+     * Método privado para calcular el vuelto de una compra de Super8
+     *
+     * @param m El saldo que es un deposito de monedas con el que se pagó.
+     */
     private void calcularVueltoSUPER8(Deposito<Moneda> m) {
         int suma = 0;
         for (int i = 0; i<m.getSize(); i++){

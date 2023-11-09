@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="021a62c6-0d1c-41ed-871f-9dc1d8203f3a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelExpendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelExpendedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Detalles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Detalles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,5 +76,20 @@
       <updated>1698921101009</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Comprador.java</url>
+          <line>14</line>
+          <properties class="org.example.Comprador" method="Comprar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

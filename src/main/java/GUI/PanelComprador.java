@@ -8,21 +8,28 @@ import org.example.Deposito;
 import org.example.Moneda100;
 import org.example.Moneda500;
 import org.example.Moneda1500;
-import org.example.Expendedor;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Arrays;
 
+/**
+ * PanelComprador es una clase que contiene la mayoria de componentes con las que el usuario interactua
+ * Este panel contiene botones para comprar productos y añadir monedas al saldo y se conecta a la logica para sus procesos.
+ */
 public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
     private PanelExpendedor pe;
     private Deposito<Moneda> Saldo;
     private JButton coca, fanta, sprite, super8, snickers, m100,m500,m1000,m1500;
     private JLabel SaldoDisplay;
+    /**
+     * Constructor de la clase PanelComprador, crea los botones y escuchadores ademas que organiza la interfaz de este Panel.
+     *
+     * @param c  Objeto Comprador asociado al panel.
+     * @param pe Entrada para una Referencia al panel expendedor.
+     */
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         setLayout(new BorderLayout());
         this.c = c;
@@ -68,13 +75,11 @@ public class PanelComprador extends JPanel implements ActionListener {
 
         add(rightPanel, BorderLayout.EAST);
     }
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor(Color.BLACK);
-        g.fillOval(500,200, 40, 40);
-    }
-
+    /**
+     * Metodo para detectar acciones, va por casos segun el boton, en el caso de pedir un producto lo envia a la logica y actualiza los parametros de los Objetos nativos.
+     *
+     * @param e Evento.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         int vuelto = 0;

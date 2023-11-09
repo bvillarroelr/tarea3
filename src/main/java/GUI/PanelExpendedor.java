@@ -7,7 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * PanelExpendedor es una clase que representa el panel del expendedor en la interfaz gráfica.
+ * Esta clase crea y ordena representaciones gráficas de los depósitos y sus productos
+ */
 public class PanelExpendedor extends JPanel implements ActionListener {
     private Expendedor e;
     private Comprador c;
@@ -15,6 +18,13 @@ public class PanelExpendedor extends JPanel implements ActionListener {
     private boolean VerificaSiPintaVuelto = false;
     private JButton depMon, depProd;
     private int numProducto; // Con un setter cambiar tamaño de los Depositos cuando se instancie en otras clases
+    /**
+     * Constructor de la clase PanelExpendedor.
+     *
+     * @param numProducto Cantidad de productos en la maquina.
+     * @param p           PanelPrincipal asociado al panel.
+     * @param c           Referenncia de Comprador del panel.
+     */
     public PanelExpendedor(int numProducto, PanelPrincipal p, Comprador c){
         this.numProducto = numProducto;
         this.c = c;
@@ -38,21 +48,43 @@ public class PanelExpendedor extends JPanel implements ActionListener {
 
         e = new Expendedor(numProducto);
     }
-
+    /**
+     * Cambia el estado para detectar cuando pintar el producto.
+     *
+     * @param verificaSiPintaProducto Indica si se debe pintar el producto.
+     */
     public void setVerificaSiPintaProducto(boolean verificaSiPintaProducto) {
         VerificaSiPintaProducto = verificaSiPintaProducto;
     }
+    /**
+     * Cambia el estado para detectar cuando pintar el vuelto.
+     *
+     * @param verificaSiPintaVuelto Indica si se debe pintar el vuelto.
+     */
     public void setVerificaSiPintaVuelto(boolean verificaSiPintaVuelto) {
         VerificaSiPintaVuelto = verificaSiPintaVuelto;
     }
-
+    /**
+     * Metodo getter para el objeto Expendedor asociado al panel.
+     *
+     * @return Objeto Expendedor del Panel.
+     */
     public Expendedor getE() {
         return e;
     }
-
+    /**
+     * Metodo Setter para el objeto Expendedor asociado al panel.
+     *
+     * @param e objeto Expendedor a colocar.
+     */
     public void setE(Expendedor e) {
         this.e = e;
     }
+    /**
+     * Método paint que dibuja el expendedor, sus partes y los productos del deposito
+     *
+     * @param g Gráficos.
+     */
 
     @Override
     public void paint(Graphics g) {
@@ -90,36 +122,71 @@ public class PanelExpendedor extends JPanel implements ActionListener {
         paintSuper8(g,e);
         paintSnickers(g,e);
     }
+    /**
+     * Método para pintar las coca cola del deposito.
+     *
+     * @param g   Gráficos.
+     * @param exp Objeto Expendedor.
+     */
     public void paintCoca(Graphics g, Expendedor exp) {
         for(int i = 0; i<40*exp.getNumCoca(); i+=40) {
             g.setColor(Color.RED);
             g.fillRect(330 + i,25,20,50);
         }
     }
+    /**
+     * Método para pintar las fantas del deposito.
+     *
+     * @param g   Gráficos.
+     * @param exp Objeto Expendedor.
+     */
     public void paintFanta(Graphics g, Expendedor exp) {
         for(int i = 0; i<40*exp.getNumFanta(); i+=40) {
             g.setColor(Color.ORANGE);
             g.fillRect(330 + i,115,20,50);
         }
     }
+    /**
+     * Método para pintar las sprites del deposito.
+     *
+     * @param g   Gráficos.
+     * @param exp Objeto Expendedor.
+     */
     public void paintSprite(Graphics g, Expendedor exp) {
         for(int i = 0; i<40*exp.getNumSprite(); i+=40){
             g.setColor(Color.GREEN);
             g.fillRect(330 + i,205,20,50);
         }
     }
+    /**
+     * Método para pintar los super8 del deposito.
+     *
+     * @param g   Gráficos.
+     * @param exp Objeto Expendedor.
+     */
     public void paintSuper8(Graphics g, Expendedor exp) {
         for(int i = 0; i<40*exp.getNumSuper8(); i+=40) {
             g.setColor(Color.BLACK);
             g.fillRect(330 + i,295,12,52);
         }
     }
+    /**
+     * Método para pintar los snickers del deposito.
+     *
+     * @param g   Gráficos.
+     * @param exp Objeto Expendedor.
+     */
     public void paintSnickers(Graphics g, Expendedor exp) {
         for(int i = 0; i<40*exp.getNumSnickers(); i+=40){
             g.setColor(Color.darkGray);
             g.fillRect(330 + i,400,15,35);
         }
     }
+    /**
+     * Metodo para manejar acciones, detecta cuando se "recoge" el producto.
+     *
+     * @param e Evento.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == depMon && VerificaSiPintaVuelto) {
