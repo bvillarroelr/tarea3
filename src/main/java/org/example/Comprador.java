@@ -20,8 +20,8 @@ public class Comprador {
     public int Comprar(Deposito<Moneda> m, Detalles cualProducto, Expendedor exp) {
         Producto p = exp.comprarProducto(m, cualProducto);
         int vuelto = 0;
-        if (cualProducto == Detalles.COCA || cualProducto == Detalles.SPRITE || cualProducto == Detalles.FANTA ||
-                cualProducto == Detalles.SNICKER || cualProducto == Detalles.SUPER8) {
+        if (cualProducto == Detalles.serieCOCA || cualProducto == Detalles.serieSPR || cualProducto == Detalles.serieFAN ||
+                cualProducto == Detalles.serieSN || cualProducto == Detalles.serieS8) {
             for(int i=0;i < exp.getVuelto().getSize();i++){
                 vuelto +=  exp.getVuelto().seeElement(i).getValor();
             }

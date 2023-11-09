@@ -80,7 +80,7 @@ public class PanelComprador extends JPanel implements ActionListener {
         int vuelto = 0;
 
         if(e.getSource() == coca) {
-            vuelto = c.Comprar(Saldo,Detalles.COCA,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.serieCOCA,pe.getE());
             Saldo.clearDeposito();
             Saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
@@ -90,7 +90,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == fanta) {
-            vuelto = c.Comprar(Saldo,Detalles.FANTA,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.serieFAN,pe.getE());
             Saldo.clearDeposito();
             Saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
@@ -99,7 +99,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == sprite) {
-            vuelto = c.Comprar(Saldo,Detalles.SPRITE,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.serieSPR,pe.getE());
             Saldo.clearDeposito();
             Saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
@@ -108,7 +108,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == super8) {
-            vuelto = c.Comprar(Saldo,Detalles.SUPER8,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.serieS8,pe.getE());
             Saldo.clearDeposito();
             Saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
@@ -117,7 +117,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == snickers) {
-            vuelto = c.Comprar(Saldo,Detalles.SNICKER,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.serieSN,pe.getE());
             Saldo.clearDeposito();
             Saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();

@@ -4,13 +4,16 @@ package org.example;
  * La enumeración Detalles contiene las ctes. usadas para elegir productos y acceder a precios
  */
 public enum Detalles {
-    COCA(1),
-    SPRITE(2),
-    FANTA(3),
-    SNICKER(4),
-    SUPER8(5),
-    BEBIDAS(800),
-    DULCES(500);
+    serieCOCA(1),
+    serieSPR(2),
+    serieFAN(3),
+    serieSN(4),
+    serieS8(5),
+    COCA(900),
+    SPRITE(1100),
+    FANTA(1200),
+    SNICKER(1000),
+    SUPER8(500);
 
     private int det;
 
