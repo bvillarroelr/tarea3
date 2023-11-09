@@ -14,6 +14,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
@@ -66,9 +68,6 @@ public class PanelComprador extends JPanel implements ActionListener {
 
         add(rightPanel, BorderLayout.EAST);
     }
-    public void refreshSaldo(Deposito<Moneda> n){
-        SaldoDisplay.setText("Saldo: $" + n.getElemento().getValor());
-    }
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -79,41 +78,50 @@ public class PanelComprador extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         int vuelto = 0;
-        // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
+
         if(e.getSource() == coca) {
             vuelto = c.Comprar(Saldo,Detalles.COCA,pe.getE());
+            Saldo.clearDeposito();
+            Saldo.copiarADeposito(pe.getE().getVuelto());
+            pe.getE().getVuelto().clearDeposito();
             SaldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Coca");
             pe.setVerificaSiPintaProducto(true);
             pe.repaint();
-            System.out.println(pe.getE().getVuelto().getSize());
-
-            int c=0;
-            for(int i=0;i < pe.getE().getVuelto().getSize();i++){
-                Saldo.addElemento(pe.getE().getVuelto().seeElement(i));
-                c += Saldo.seeElement(i).getValor();
-            }
-            System.out.println(c);
-
-            pe.getE().getVuelto().clearDeposito();
         }
         else if(e.getSource() == fanta) {
-            c.Comprar(Saldo,Detalles.FANTA,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.FANTA,pe.getE());
+            Saldo.clearDeposito();
+            Saldo.copiarADeposito(pe.getE().getVuelto());
+            pe.getE().getVuelto().clearDeposito();
+            SaldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Fanta");
             pe.repaint();
         }
         else if(e.getSource() == sprite) {
-            c.Comprar(Saldo,Detalles.SPRITE,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.SPRITE,pe.getE());
+            Saldo.clearDeposito();
+            Saldo.copiarADeposito(pe.getE().getVuelto());
+            pe.getE().getVuelto().clearDeposito();
+            SaldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Sprite");
             pe.repaint();
         }
         else if(e.getSource() == super8) {
-            c.Comprar(Saldo,Detalles.SUPER8,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.SUPER8,pe.getE());
+            Saldo.clearDeposito();
+            Saldo.copiarADeposito(pe.getE().getVuelto());
+            pe.getE().getVuelto().clearDeposito();
+            SaldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Super 8");
             pe.repaint();
         }
         else if(e.getSource() == snickers) {
-            c.Comprar(Saldo,Detalles.SNICKER,pe.getE());
+            vuelto = c.Comprar(Saldo,Detalles.SNICKER,pe.getE());
+            Saldo.clearDeposito();
+            Saldo.copiarADeposito(pe.getE().getVuelto());
+            pe.getE().getVuelto().clearDeposito();
+            SaldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Snickers");
             pe.repaint();
         }

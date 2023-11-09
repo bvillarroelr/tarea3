@@ -24,7 +24,6 @@ public class Comprador {
                 cualProducto == Detalles.SNICKER || cualProducto == Detalles.SUPER8) {
             for(int i=0;i < exp.getVuelto().getSize();i++){
                 vuelto +=  exp.getVuelto().seeElement(i).getValor();
-                System.out.println(vuelto);
             }
         }
         return vuelto;

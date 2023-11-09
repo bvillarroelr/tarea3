@@ -88,7 +88,6 @@ public class Expendedor {
      * @return El vuelto en forma de una moneda.
      */
     public Deposito<Moneda> getVuelto() {
-        System.out.println("Flag" + monVu.getSize());
         return monVu;
     }
 

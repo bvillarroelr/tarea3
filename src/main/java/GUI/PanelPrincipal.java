@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class PanelPrincipal extends JPanel { ;
     private Comprador c = new Comprador();
-    private PanelExpendedor exp = new PanelExpendedor(3, this, c);   // De aquí se define la cantidad de producto, y por ende, cuantos se veran en el expendedor
+    private PanelExpendedor exp = new PanelExpendedor(3, this, c);
     private PanelComprador com = new PanelComprador(c,exp);
 
     public PanelPrincipal() {
@@ -19,7 +19,5 @@ public class PanelPrincipal extends JPanel { ;
     public void paint (Graphics g) {
         super.paint(g);
         exp.paint(g);
-
-        // borré com.paint(g) porque mostraba 2 veces el JLabel de saldo
     }
 }

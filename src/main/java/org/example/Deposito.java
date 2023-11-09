@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
 /**
  * Deposito generico para poder crear cualquier deposito.
  *
@@ -38,10 +38,13 @@ public class Deposito<T> {
             return null;
         }
     }
-    public T seeElement(int i){
-        if (!listaElementos.isEmpty()) { return listaElementos.get(i);}
-        else return null;
-        }
+
+    public T seeElement(int i) {
+        if (!listaElementos.isEmpty()) {
+            return listaElementos.get(i);
+        } else return null;
+    }
+
     /**
      * Obtiene el número de elementos almacenados en el depósito.
      *
@@ -50,7 +53,12 @@ public class Deposito<T> {
     public int getSize() {
         return listaElementos.size();
     }
-    public void clearDeposito(){
+
+    public void clearDeposito() {
         listaElementos.clear();
+    }
+
+    public void copiarADeposito(Deposito<T> d) {
+        listaElementos.addAll(d.listaElementos);;
     }
 }
