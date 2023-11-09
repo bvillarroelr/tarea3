@@ -1,4 +1,9 @@
-package org.example;
+package GUI;
+
+import org.example.Comprador;
+import org.example.Detalles;
+import org.example.Moneda;
+import org.example.Moneda1000;
 
 import javax.swing.*;
 import java.awt.*;
@@ -61,7 +66,7 @@ public class PanelComprador extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
         if(e.getSource() == coca) {
-            DisplayedInfo.setText("Vuelto: " + c.Comprar(m,Detalles.COCA,pe.getE()));
+            DisplayedInfo.setText("Vuelto: " + c.Comprar(m, Detalles.COCA,pe.getE()));
             Saldo.setText("Seleccione una moneda");
             System.out.println("Compraste una Coca");
             pe.setVerificaSiPintaProducto(true);

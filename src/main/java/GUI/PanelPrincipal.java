@@ -1,9 +1,10 @@
-package org.example;
+package GUI;
+
+import org.example.Comprador;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import javax.swing.JFrame;
+
 public class PanelPrincipal extends JPanel { ;
     private Comprador c = new Comprador();
     private PanelExpendedor exp = new PanelExpendedor(3, this, c);   // De aquí se define la cantidad de producto, y por ende, cuantos se veran en el expendedor

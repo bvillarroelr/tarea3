@@ -1,4 +1,7 @@
-package org.example;
+package GUI;
+
+import org.example.Comprador;
+import org.example.Expendedor;
 
 import javax.swing.*;
 import java.awt.*;
