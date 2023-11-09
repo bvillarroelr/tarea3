@@ -9,7 +9,7 @@ public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
     private PanelExpendedor pe;
     private Moneda m;
-    private JButton coca, fanta, sprite, super8, snickers, retirarMonedas, retirarProducto;
+    private JButton coca, fanta, sprite, super8, snickers;
     private JLabel DisplayedInfo, Saldo;
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         this.m = new Moneda1000(); // Por defecto es una moneda de 1000
@@ -22,12 +22,6 @@ public class PanelComprador extends JPanel implements ActionListener {
         sprite = new JButton("Sprite");
         super8 = new JButton("Super 8");
         snickers = new JButton("Snickers");
-
-        retirarMonedas = new JButton();
-        retirarProducto = new JButton();
-        retirarMonedas.setVisible(true);   // los seteamos en false, pues nos interesa que se vean las animaciones de cuando aparecen las monedas y producto respectivamente
-        retirarProducto.setVisible(true);
-        retirarMonedas.setBounds(520,465,120,80);
 
         DisplayedInfo = new JLabel("Seleccione un Producto");
         Saldo = new JLabel("Saldo: Usando una moneda de " + m.getValor());
@@ -70,13 +64,13 @@ public class PanelComprador extends JPanel implements ActionListener {
             DisplayedInfo.setText("Vuelto: " + c.Comprar(m,Detalles.COCA,pe.getE()));
             Saldo.setText("Seleccione una moneda");
             System.out.println("Compraste una Coca");
+            pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == fanta) {
             c.Comprar(m,Detalles.FANTA,pe.getE());
             System.out.println("Compraste una Fanta");
             pe.repaint();
-
         }
         else if(e.getSource() == sprite) {
             c.Comprar(m,Detalles.SPRITE,pe.getE());

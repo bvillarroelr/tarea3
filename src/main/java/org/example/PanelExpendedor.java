@@ -7,29 +7,40 @@ import java.awt.event.ActionListener;
 
 public class PanelExpendedor extends JPanel implements ActionListener {
     private Expendedor e;
-    private JButton dep1, dep2;
+    private Comprador c;
+    private boolean VerificaSiPintaProducto = false;
+    private boolean VerificaSiPintaVuelto = false;
+    private JButton depMon, depProd;
     private int numProducto; // Con un setter cambiar tamaño de los Depositos cuando se instancie en otras clases
-    public PanelExpendedor(int numProducto, PanelPrincipal p){
+    public PanelExpendedor(int numProducto, PanelPrincipal p, Comprador c){
         this.numProducto = numProducto;
+        this.c = c;
         // Creamos botones que retiraran el producto y el vuelto
-        dep1 = new JButton("asd");
-        dep1.setBounds(520,465,120,80);
-        dep1.setOpaque(false);
-        dep1.setContentAreaFilled(false);
-        dep1.setBorderPainted(false);
+        depMon = new JButton("asd");
+        depMon.setBounds(520,465,120,80);
+        depMon.setOpaque(false);
+        depMon.setContentAreaFilled(false);
+        depMon.setBorderPainted(false);
 
-        dep2 = new JButton("dsa");
-        dep2.setBounds(340,465,120,80);
-        dep2.setOpaque(false);
-        dep2.setContentAreaFilled(false);
-        dep2.setBorderPainted(false);
+        depProd = new JButton("dsa");
+        depProd.setBounds(340,465,120,80);
+        depProd.setOpaque(false);
+        depProd.setContentAreaFilled(false);
+        depProd.setBorderPainted(false);
 
-        p.add(dep1);
-        dep1.addActionListener(this);
-        p.add(dep2);
-        dep2.addActionListener(this);
+        p.add(depMon);
+        depMon.addActionListener(this);
+        p.add(depProd);
+        depProd.addActionListener(this);
 
         e = new Expendedor(numProducto);
+    }
+
+    public void setVerificaSiPintaProducto(boolean verificaSiPintaProducto) {
+        VerificaSiPintaProducto = verificaSiPintaProducto;
+    }
+    public void setVerificaSiPintaVuelto(boolean verificaSiPintaVuelto) {
+        VerificaSiPintaVuelto = verificaSiPintaVuelto;
     }
 
     public Expendedor getE() {
@@ -56,6 +67,18 @@ public class PanelExpendedor extends JPanel implements ActionListener {
         g.setColor(Color.BLACK);
         g.fillRect(340,465,120,80);
         g.fillRect(520,465,120,80);
+        if(VerificaSiPintaProducto) {
+            g.setColor(Color.RED);
+            g.fillRect(360,470,20,50);
+        }
+        else {
+            g.setColor(Color.BLACK);
+            g.fillRect(360,470,20,50);
+        }
+
+        if(VerificaSiPintaVuelto) {
+            ;   // aqui debera pintar monedas
+        }
 
         // Rellenamos los depósitos
         paintCoca(g,e);
@@ -96,12 +119,14 @@ public class PanelExpendedor extends JPanel implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Implementar métodos que se "conecten" a PanelComprador
-        if(e.getSource() == dep1) {
-            System.out.println("asd");
+        if(e.getSource() == depMon && VerificaSiPintaVuelto) {
+            // lógica de vuelto (retirar vuelto)
+            VerificaSiPintaVuelto = false;      // Falta hacer desaparecer el "producto" al clickear en el recuadro
+            System.out.printf("Recogiste $100");
         }
-        else if(e.getSource() == dep2) {
-            System.out.printf("dsa");
+        else if(e.getSource() == depProd && VerificaSiPintaProducto) {
+            // lógica de comprador (consumir el producto)
+            System.out.println("Recogiste el producto");
         }
     }
 }
