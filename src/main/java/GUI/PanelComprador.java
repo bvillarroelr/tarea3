@@ -8,26 +8,23 @@ import org.example.Deposito;
 import org.example.Moneda100;
 import org.example.Moneda500;
 import org.example.Moneda1500;
-import org.example.Expendedor;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
     private PanelExpendedor pe;
-    private Deposito<Moneda> Saldo;
+    private Deposito<Moneda> saldo;
     private JButton coca, fanta, sprite, super8, snickers, m100,m500,m1000,m1500;
-    private JLabel SaldoDisplay;
+    private JLabel saldoDisplay;
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         setLayout(new BorderLayout());
         this.c = c;
         this.pe = pe;
-        Saldo = new Deposito<>();
+        saldo = new Deposito<>();
 
         coca = new JButton("CocaCola");
         fanta = new JButton("Fanta");
@@ -38,14 +35,14 @@ public class PanelComprador extends JPanel implements ActionListener {
         m500 = new JButton("Añadir 500");
         m1000 = new JButton("Añadir 1000");
         m1500 = new JButton("Añadir 1500");
-        SaldoDisplay = new JLabel("Saldo: $0");
+        saldoDisplay = new JLabel("Saldo: $0");
 
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
         midrightPanel.setLayout(new GridLayout(3, 3));
 
-        rightPanel.add(SaldoDisplay);
+        rightPanel.add(saldoDisplay);
         rightPanel.add(midrightPanel);
         midrightPanel.add(coca);
         coca.addActionListener(this);
@@ -80,86 +77,86 @@ public class PanelComprador extends JPanel implements ActionListener {
         int vuelto = 0;
 
         if(e.getSource() == coca) {
-            vuelto = c.Comprar(Saldo,Detalles.COCA,pe.getE());
-            Saldo.clearDeposito();
-            Saldo.copiarADeposito(pe.getE().getVuelto());
+            vuelto = c.Comprar(saldo,Detalles.COCA,pe.getE());
+            saldo.clearDeposito();
+            saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
-            SaldoDisplay.setText("Saldo: $" + vuelto);
+            saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Coca");
             pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == fanta) {
-            vuelto = c.Comprar(Saldo,Detalles.FANTA,pe.getE());
-            Saldo.clearDeposito();
-            Saldo.copiarADeposito(pe.getE().getVuelto());
+            vuelto = c.Comprar(saldo,Detalles.FANTA,pe.getE());
+            saldo.clearDeposito();
+            saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
-            SaldoDisplay.setText("Saldo: $" + vuelto);
+            saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Fanta");
             pe.repaint();
         }
         else if(e.getSource() == sprite) {
-            vuelto = c.Comprar(Saldo,Detalles.SPRITE,pe.getE());
-            Saldo.clearDeposito();
-            Saldo.copiarADeposito(pe.getE().getVuelto());
+            vuelto = c.Comprar(saldo,Detalles.SPRITE,pe.getE());
+            saldo.clearDeposito();
+            saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
-            SaldoDisplay.setText("Saldo: $" + vuelto);
+            saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Sprite");
             pe.repaint();
         }
         else if(e.getSource() == super8) {
-            vuelto = c.Comprar(Saldo,Detalles.SUPER8,pe.getE());
-            Saldo.clearDeposito();
-            Saldo.copiarADeposito(pe.getE().getVuelto());
+            vuelto = c.Comprar(saldo,Detalles.SUPER8,pe.getE());
+            saldo.clearDeposito();
+            saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
-            SaldoDisplay.setText("Saldo: $" + vuelto);
+            saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Super 8");
             pe.repaint();
         }
         else if(e.getSource() == snickers) {
-            vuelto = c.Comprar(Saldo,Detalles.SNICKER,pe.getE());
-            Saldo.clearDeposito();
-            Saldo.copiarADeposito(pe.getE().getVuelto());
+            vuelto = c.Comprar(saldo,Detalles.SNICKER,pe.getE());
+            saldo.clearDeposito();
+            saldo.copiarADeposito(pe.getE().getVuelto());
             pe.getE().getVuelto().clearDeposito();
-            SaldoDisplay.setText("Saldo: $" + vuelto);
+            saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Snickers");
             pe.repaint();
         }
         else if(e.getSource() == m100) {
             Moneda m = new Moneda100();
-            Saldo.addElemento(m);
+            saldo.addElemento(m);
             int c = 0;
-            for(int i=0;i < Saldo.getSize();i++){
-                c += Saldo.seeElement(i).getValor();
+            for(int i = 0; i < saldo.getSize(); i++){
+                c += saldo.seeElement(i).getValor();
             }
-            SaldoDisplay.setText("Saldo: $" + c);
+            saldoDisplay.setText("Saldo: $" + c);
         }
         else if(e.getSource() == m500) {
             Moneda m = new Moneda500();
-            Saldo.addElemento(m);
+            saldo.addElemento(m);
             int c = 0;
-            for (int i = 0; i < Saldo.getSize(); i++) {
-                c += Saldo.seeElement(i).getValor();
+            for (int i = 0; i < saldo.getSize(); i++) {
+                c += saldo.seeElement(i).getValor();
             }
-            SaldoDisplay.setText("Saldo: $" + c);
+            saldoDisplay.setText("Saldo: $" + c);
         }
         else if(e.getSource() == m1000) {
             Moneda m = new Moneda1000();
-            Saldo.addElemento(m);
+            saldo.addElemento(m);
             int c = 0;
-            for (int i = 0; i < Saldo.getSize(); i++) {
-                c += Saldo.seeElement(i).getValor();
+            for (int i = 0; i < saldo.getSize(); i++) {
+                c += saldo.seeElement(i).getValor();
             }
-            SaldoDisplay.setText("Saldo: $" + c);
+            saldoDisplay.setText("Saldo: $" + c);
         }
         else if(e.getSource() == m1500) {
             Moneda m = new Moneda1500();
-            Saldo.addElemento(m);
+            saldo.addElemento(m);
             int c = 0;
-            for (int i = 0; i < Saldo.getSize(); i++) {
-                c += Saldo.seeElement(i).getValor();
+            for (int i = 0; i < saldo.getSize(); i++) {
+                c += saldo.seeElement(i).getValor();
             }
-            SaldoDisplay.setText("Saldo: $" + c);
+            saldoDisplay.setText("Saldo: $" + c);
         }
     }
 }
