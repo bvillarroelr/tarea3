@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 /**
  * La clase Expendedor es la clase principal, contiene depositos de varios productos y metodos para realizar transacciones.
  */
@@ -47,31 +48,34 @@ public class Expendedor {
      * @throws PagoInsuficienteException   Si el valor de la moneda es insuficiente para comprar el producto.
      * @throws NoHayProductoException      Si no hay productos disponibles del tipo especificado o se ha elegido un producto invalido.
      */
-    public Producto comprarProducto(Moneda m, Detalles cual) {
-        if (m == null)  throw new PagoIncorrectoException("No se ha encontrado una moneda");
-
+    public Producto comprarProducto(Deposito<Moneda> m, Detalles cual) {
+        if (m == null)  throw new PagoIncorrectoException("No se ha encontrado ninguna moneda en saldo");
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
         if (cual == Detalles.COCA && depCoca.getSize() > 0) {
-            if (m.getValor() < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No hay Productos en el Deposito");
+            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
             calcularVueltoBebida(m);
             return depCoca.getElemento();
         }
         if (cual == Detalles.SPRITE && depSprite.getSize() > 0) {
-            if (m.getValor() < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No hay Productos en el Deposito");
+            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
             calcularVueltoBebida(m);
             return depSprite.getElemento();
         }
         if (cual == Detalles.FANTA && depFanta.getSize() > 0) {
-            if (m.getValor() < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No hay Productos en el Deposito");
+            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
             calcularVueltoBebida(m);
             return depFanta.getElemento();
         }
         if (cual == Detalles.SNICKER && depSnickers.getSize() > 0) {
-            if (m.getValor() < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No hay Productos en el Deposito");
+            if (suma < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
             calcularVueltoDulce(m);
             return depSnickers.getElemento();
         }
         if (cual == Detalles.SUPER8 && depSuper8.getSize() > 0) {
-            if (m.getValor() < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No hay Productos en el Deposito");
+            if (suma < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
             calcularVueltoDulce(m);
             return depSuper8.getElemento();
         }
@@ -83,8 +87,9 @@ public class Expendedor {
      *
      * @return El vuelto en forma de una moneda.
      */
-    public Moneda getVuelto() {
-        return monVu.getElemento();
+    public Deposito<Moneda> getVuelto() {
+        System.out.println("Flag" + monVu.getSize());
+        return monVu;
     }
 
     /**
@@ -92,8 +97,12 @@ public class Expendedor {
      *
      * @param m La moneda con la que se pagó.
      */
-    private void calcularVueltoBebida(Moneda m) {
-        for (int i = 0; i < m.getValor() - Detalles.BEBIDAS.getDetalle(); i += 100) {
+    private void calcularVueltoBebida(Deposito<Moneda> m) {
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
+        for (int i = 0; i < suma - Detalles.BEBIDAS.getDetalle(); i += 100) {
             Moneda a = new Moneda100();
             monVu.addElemento(a);
         }
@@ -104,8 +113,12 @@ public class Expendedor {
      *
      * @param m La moneda con la que se pagó.
      */
-    private void calcularVueltoDulce(Moneda m) {
-        for (int i = 0; i < m.getValor() - Detalles.DULCES.getDetalle(); i += 100) {
+    private void calcularVueltoDulce(Deposito<Moneda> m) {
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
+        for (int i = 0; i < suma - Detalles.DULCES.getDetalle(); i += 100) {
             Moneda a = new Moneda100();
             monVu.addElemento(a);
         }

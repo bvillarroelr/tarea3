@@ -50,4 +50,7 @@ public class Deposito<T> {
     public int getSize() {
         return listaElementos.size();
     }
+    public void clearDeposito(){
+        listaElementos.clear();
+    }
 }
