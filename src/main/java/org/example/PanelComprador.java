@@ -58,26 +58,29 @@ public class PanelComprador extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
         if(e.getSource() == coca) {
-            System.out.println(pe.getE().getNumCoca()); // Los valores se guardan, es decir, al comprar producto se descuentan del depósito tal y como debiese ser.
             c.Comprar(m,Detalles.COCA,pe.getE());
             System.out.println("Compraste una Coca");
-            System.out.println(pe.getE().getNumCoca());
+            pe.repaint();
         }
-        if(e.getSource() == fanta) {
+        else if(e.getSource() == fanta) {
             c.Comprar(m,Detalles.FANTA,pe.getE());
             System.out.println("Compraste una Fanta");
+            pe.repaint();
         }
-        if(e.getSource() == sprite) {
+        else if(e.getSource() == sprite) {
             c.Comprar(m,Detalles.SPRITE,pe.getE());
             System.out.println("Compraste una Sprite");
+            pe.repaint();
         }
-        if(e.getSource() == super8) {
+        else if(e.getSource() == super8) {
             c.Comprar(m,Detalles.SUPER8,pe.getE());
             System.out.println("Compraste un Super 8");
+            pe.repaint();
         }
-        if(e.getSource() == snickers) {
+        else if(e.getSource() == snickers) {
             c.Comprar(m,Detalles.SNICKER,pe.getE());
             System.out.println("Compraste un Snickers");
+            pe.repaint();
         }
     }
 }

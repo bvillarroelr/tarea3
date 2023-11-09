@@ -37,20 +37,38 @@ public class PanelExpendedor extends JPanel {
         g.fillRect(520,465,120,80);
 
         // Rellenamos los depósitos (visualmente)
-        for(int i = 0; i<40*numProducto; i+=40) {                      // i < numProducto
-            // CocaCola
+        paintCoca(g,e);
+        paintFanta(g,e);
+        paintSprite(g,e);
+        paintSuper8(g,e);
+        paintSnickers(g,e);
+    }
+    public void paintCoca(Graphics g, Expendedor exp) {
+        for(int i = 0; i<40*exp.getNumCoca(); i+=40) {
             g.setColor(Color.RED);
             g.fillRect(330 + i,25,20,50);
-            // Fanta
+        }
+    }
+    public void paintFanta(Graphics g, Expendedor exp) {
+        for(int i = 0; i<40*exp.getNumFanta(); i+=40) {
             g.setColor(Color.ORANGE);
             g.fillRect(330 + i,115,20,50);
-            // Sprite
+        }
+    }
+    public void paintSprite(Graphics g, Expendedor exp) {
+        for(int i = 0; i<40*exp.getNumSprite(); i+=40){
             g.setColor(Color.GREEN);
             g.fillRect(330 + i,205,20,50);
-            // Super8
+        }
+    }
+    public void paintSuper8(Graphics g, Expendedor exp) {
+        for(int i = 0; i<40*exp.getNumSuper8(); i+=40) {
             g.setColor(Color.BLACK);
             g.fillRect(330 + i,295,12,52);
-            // Snickers
+        }
+    }
+    public void paintSnickers(Graphics g, Expendedor exp) {
+        for(int i = 0; i<40*exp.getNumSnickers(); i+=40){
             g.setColor(Color.darkGray);
             g.fillRect(330 + i,400,15,35);
         }

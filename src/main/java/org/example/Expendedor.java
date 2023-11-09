@@ -114,5 +114,17 @@ public class Expendedor {
     public int getNumCoca() {
         return depCoca.getSize();
     }
+    public int getNumFanta() {
+        return depFanta.getSize();
+    }
+    public int getNumSprite() {
+        return depSprite.getSize();
+    }
+    public int getNumSuper8() {
+        return depSuper8.getSize();
+    }
+    public int getNumSnickers() {
+        return depSnickers.getSize();
+    }
 
 }
