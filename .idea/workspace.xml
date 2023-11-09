@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="2d63d093-6b01-4f11-9d5d-f507ab1085f7" name="Changes" comment="">
+    <list default="true" id="021a62c6-0d1c-41ed-871f-9dc1d8203f3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Comprador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Deposito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Deposito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Expendedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelComprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelComprador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" afterDir="false" />
     </list>
-=======
-    <list default="true" id="2d63d093-6b01-4f11-9d5d-f507ab1085f7" name="Changes" comment="" />
->>>>>>> fd4dbb8af56926d84913f65ae5a514ac335ea345
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

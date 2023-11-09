@@ -4,6 +4,11 @@ import org.example.Comprador;
 import org.example.Detalles;
 import org.example.Moneda;
 import org.example.Moneda1000;
+import org.example.Deposito;
+import org.example.Moneda100;
+import org.example.Moneda500;
+import org.example.Moneda1500;
+import org.example.Expendedor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,15 +18,9 @@ import java.awt.event.ActionListener;
 public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
     private PanelExpendedor pe;
-<<<<<<< HEAD:src/main/java/org/example/PanelComprador.java
     private Deposito<Moneda> Saldo;
     private JButton coca, fanta, sprite, super8, snickers, m100,m500,m1000,m1500;
     private JLabel SaldoDisplay;
-=======
-    private Moneda m;
-    private JButton coca, fanta, sprite, super8, snickers;
-    private JLabel DisplayedInfo, Saldo;
->>>>>>> fd4dbb8af56926d84913f65ae5a514ac335ea345:src/main/java/GUI/PanelComprador.java
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         setLayout(new BorderLayout());
         this.c = c;
@@ -33,18 +32,12 @@ public class PanelComprador extends JPanel implements ActionListener {
         sprite = new JButton("Sprite");
         super8 = new JButton("Super 8");
         snickers = new JButton("Snickers");
-<<<<<<< HEAD:src/main/java/org/example/PanelComprador.java
         m100 = new JButton("Añadir 100");
         m500 = new JButton("Añadir 500");
         m1000 = new JButton("Añadir 1000");
         m1500 = new JButton("Añadir 1500");
         SaldoDisplay = new JLabel("Saldo: $0");
-=======
 
-        DisplayedInfo = new JLabel("Seleccione un Producto");
-        Saldo = new JLabel("Saldo: Usando una moneda de " + m.getValor());
-
->>>>>>> fd4dbb8af56926d84913f65ae5a514ac335ea345:src/main/java/GUI/PanelComprador.java
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
@@ -88,13 +81,8 @@ public class PanelComprador extends JPanel implements ActionListener {
         int vuelto = 0;
         // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
         if(e.getSource() == coca) {
-<<<<<<< HEAD:src/main/java/org/example/PanelComprador.java
             vuelto = c.Comprar(Saldo,Detalles.COCA,pe.getE());
             SaldoDisplay.setText("Saldo: $" + vuelto);
-=======
-            DisplayedInfo.setText("Vuelto: " + c.Comprar(m, Detalles.COCA,pe.getE()));
-            Saldo.setText("Seleccione una moneda");
->>>>>>> fd4dbb8af56926d84913f65ae5a514ac335ea345:src/main/java/GUI/PanelComprador.java
             System.out.println("Compraste una Coca");
             pe.setVerificaSiPintaProducto(true);
             pe.repaint();
