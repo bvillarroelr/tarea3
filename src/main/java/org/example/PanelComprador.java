@@ -9,7 +9,7 @@ public class PanelComprador extends JPanel implements ActionListener {
     private Comprador c;
     private PanelExpendedor pe;
     private Moneda m;
-    private JButton coca, fanta, sprite, super8, snickers, agregarMoneda;
+    private JButton coca, fanta, sprite, super8, snickers, retirarMonedas, retirarProducto;
     private JLabel DisplayedInfo, Saldo;
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         this.m = new Moneda1000(); // Por defecto es una moneda de 1000
@@ -22,6 +22,13 @@ public class PanelComprador extends JPanel implements ActionListener {
         sprite = new JButton("Sprite");
         super8 = new JButton("Super 8");
         snickers = new JButton("Snickers");
+
+        retirarMonedas = new JButton();
+        retirarProducto = new JButton();
+        retirarMonedas.setVisible(true);   // los seteamos en false, pues nos interesa que se vean las animaciones de cuando aparecen las monedas y producto respectivamente
+        retirarProducto.setVisible(true);
+        retirarMonedas.setBounds(520,465,120,80);
+
         DisplayedInfo = new JLabel("Seleccione un Producto");
         Saldo = new JLabel("Saldo: Usando una moneda de " + m.getValor());
 
@@ -32,7 +39,6 @@ public class PanelComprador extends JPanel implements ActionListener {
 
         rightPanel.add(Saldo);
         rightPanel.add(midrightPanel);
-
         midrightPanel.add(coca);
         coca.addActionListener(this);
         midrightPanel.add(super8);
