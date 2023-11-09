@@ -5,8 +5,9 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 public class PanelPrincipal extends JPanel { ;
-    private PanelComprador com = new PanelComprador();
-    private PanelExpendedor exp = new PanelExpendedor();
+    private Comprador c = new Comprador();
+    private PanelExpendedor exp = new PanelExpendedor(3);   // De aquí se define la cantidad de producto, y por ende, cuantos se veran en el expendedor
+    private PanelComprador com = new PanelComprador(c,exp);
     public PanelPrincipal() {
         this.setLayout(new BorderLayout());
         this.setBackground(Color.white);

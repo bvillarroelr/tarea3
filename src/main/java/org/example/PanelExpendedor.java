@@ -4,10 +4,21 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
-    private Expendedor e = new Expendedor(3);
-    public PanelExpendedor(){
-        e = new Expendedor(3); // Generalizar
+    private Expendedor e;
+    private int numProducto; // Con un setter cambiar tamaño de los Depositos cuando se instancie en otras clases
+    public PanelExpendedor(int numProducto){
+        this.numProducto = numProducto;
+        e = new Expendedor(numProducto);
     }
+
+    public Expendedor getE() {
+        return e;
+    }
+
+    public void setE(Expendedor e) {
+        this.e = e;
+    }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -26,7 +37,7 @@ public class PanelExpendedor extends JPanel {
         g.fillRect(520,465,120,80);
 
         // Rellenamos los depósitos (visualmente)
-        for(int i = 0; i<40*3; i+=40) {                      // i < numProducto
+        for(int i = 0; i<40*numProducto; i+=40) {                      // i < numProducto
             // CocaCola
             g.setColor(Color.RED);
             g.fillRect(330 + i,25,20,50);

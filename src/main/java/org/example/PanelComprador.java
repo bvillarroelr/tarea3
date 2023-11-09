@@ -6,12 +6,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelComprador extends JPanel implements ActionListener {
-    private Comprador c = new Comprador();
+    private Comprador c;
+    private PanelExpendedor pe;
     private Moneda m;
     private JButton coca, fanta, sprite, super8, snickers, agregarMoneda;
-    public PanelComprador() {
+    public PanelComprador(Comprador c, PanelExpendedor pe) {
         this.m = new Moneda1000(); // Por defecto es una moneda de 1000
         setLayout(new BorderLayout());
+        this.c = c;
+        this.pe = pe;
 
         coca = new JButton("CocaCola");
         fanta = new JButton("Fanta");
@@ -55,20 +58,25 @@ public class PanelComprador extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
         if(e.getSource() == coca) {
+            System.out.println(pe.getE().getNumCoca()); // Los valores se guardan, es decir, al comprar producto se descuentan del depósito tal y como debiese ser.
+            c.Comprar(m,Detalles.COCA,pe.getE());
             System.out.println("Compraste una Coca");
-            // Aca tocaria usar el metodo pero nose como poner el parametro del expendedor
-       //     c.Comprar(m,Detalles.COCA,);
+            System.out.println(pe.getE().getNumCoca());
         }
         if(e.getSource() == fanta) {
+            c.Comprar(m,Detalles.FANTA,pe.getE());
             System.out.println("Compraste una Fanta");
         }
         if(e.getSource() == sprite) {
+            c.Comprar(m,Detalles.SPRITE,pe.getE());
             System.out.println("Compraste una Sprite");
         }
         if(e.getSource() == super8) {
+            c.Comprar(m,Detalles.SUPER8,pe.getE());
             System.out.println("Compraste un Super 8");
         }
         if(e.getSource() == snickers) {
+            c.Comprar(m,Detalles.SNICKER,pe.getE());
             System.out.println("Compraste un Snickers");
         }
     }

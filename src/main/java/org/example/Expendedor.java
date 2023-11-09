@@ -110,11 +110,9 @@ public class Expendedor {
             monVu.addElemento(a);
         }
     }
+    // método de prueba para ver si los cambios de getE() se aplican a la referencia o a la copia
+    public int getNumCoca() {
+        return depCoca.getSize();
+    }
 
-    public int getNumProductos() {
-        return numProductos;
-    }
-    public void setNumProductos(int x) {
-        this.numProductos = x;
-    }
 }
