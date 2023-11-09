@@ -125,10 +125,13 @@ public class PanelExpendedor extends JPanel implements ActionListener {
         if(e.getSource() == depMon && VerificaSiPintaVuelto) {
             // lógica de vuelto (retirar vuelto)
             VerificaSiPintaVuelto = false;      // Falta hacer desaparecer el "producto" al clickear en el recuadro
+            this.repaint();
             System.out.printf("Recogiste $100");
         }
         else if(e.getSource() == depProd && VerificaSiPintaProducto) {
             // lógica de comprador (consumir el producto)
+            VerificaSiPintaProducto = false;
+            repaint();
             System.out.println("Recogiste el producto");
         }
     }
