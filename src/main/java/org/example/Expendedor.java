@@ -54,29 +54,29 @@ public class Expendedor {
         for (int i = 0; i<m.getSize(); i++){
             suma += m.seeElement(i).getValor();
         }
-        if (cual == Detalles.COCA && depCoca.getSize() > 0) {
-            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
-            calcularVueltoBebida(m);
+        if (cual == Detalles.serieCOCA && depCoca.getSize() > 0) {
+            if (suma < Detalles.COCA.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
+            calcularVueltoCOCA(m);
             return depCoca.getElemento();
         }
-        if (cual == Detalles.SPRITE && depSprite.getSize() > 0) {
-            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
-            calcularVueltoBebida(m);
+        if (cual == Detalles.serieSPR && depSprite.getSize() > 0) {
+            if (suma < Detalles.serieSPR.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
+            calcularVueltoSPRITE(m);
             return depSprite.getElemento();
         }
-        if (cual == Detalles.FANTA && depFanta.getSize() > 0) {
-            if (suma < Detalles.BEBIDAS.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
-            calcularVueltoBebida(m);
+        if (cual == Detalles.serieFAN && depFanta.getSize() > 0) {
+            if (suma < Detalles.FANTA.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
+            calcularVueltoFANTA(m);
             return depFanta.getElemento();
         }
-        if (cual == Detalles.SNICKER && depSnickers.getSize() > 0) {
-            if (suma < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
-            calcularVueltoDulce(m);
+        if (cual == Detalles.serieSN && depSnickers.getSize() > 0) {
+            if (suma < Detalles.SNICKER.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
+            calcularVueltoSNICKER(m);
             return depSnickers.getElemento();
         }
-        if (cual == Detalles.SUPER8 && depSuper8.getSize() > 0) {
-            if (suma < Detalles.DULCES.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
-            calcularVueltoDulce(m);
+        if (cual == Detalles.serieS8 && depSuper8.getSize() > 0) {
+            if (suma < Detalles.SUPER8.getDetalle()) throw new PagoInsuficienteException("No dispone de suficiente saldo");
+            calcularVueltoSUPER8(m);
             return depSuper8.getElemento();
         }
         throw new NoHayProductoException("No hay Productos Disponibles");
@@ -96,12 +96,12 @@ public class Expendedor {
      *
      * @param m La moneda con la que se pagó.
      */
-    private void calcularVueltoBebida(Deposito<Moneda> m) {
+    private void calcularVueltoCOCA(Deposito<Moneda> m) {
         int suma = 0;
         for (int i = 0; i<m.getSize(); i++){
             suma += m.seeElement(i).getValor();
         }
-        for (int i = 0; i < suma - Detalles.BEBIDAS.getDetalle(); i += 100) {
+        for (int i = 0; i < suma - Detalles.COCA.getDetalle(); i += 100) {
             Moneda a = new Moneda100();
             monVu.addElemento(a);
         }
@@ -112,17 +112,46 @@ public class Expendedor {
      *
      * @param m La moneda con la que se pagó.
      */
-    private void calcularVueltoDulce(Deposito<Moneda> m) {
+    private void calcularVueltoSPRITE(Deposito<Moneda> m) {
         int suma = 0;
         for (int i = 0; i<m.getSize(); i++){
             suma += m.seeElement(i).getValor();
         }
-        for (int i = 0; i < suma - Detalles.DULCES.getDetalle(); i += 100) {
+        for (int i = 0; i < suma - Detalles.SPRITE.getDetalle(); i += 100) {
             Moneda a = new Moneda100();
             monVu.addElemento(a);
         }
     }
-    // método de prueba para ver si los cambios de getE() se aplican a la referencia o a la copia
+    private void calcularVueltoFANTA(Deposito<Moneda> m) {
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
+        for (int i = 0; i < suma - Detalles.FANTA.getDetalle(); i += 100) {
+            Moneda a = new Moneda100();
+            monVu.addElemento(a);
+        }
+    }
+    private void calcularVueltoSNICKER(Deposito<Moneda> m) {
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
+        for (int i = 0; i < suma - Detalles.SNICKER.getDetalle(); i += 100) {
+            Moneda a = new Moneda100();
+            monVu.addElemento(a);
+        }
+    }
+    private void calcularVueltoSUPER8(Deposito<Moneda> m) {
+        int suma = 0;
+        for (int i = 0; i<m.getSize(); i++){
+            suma += m.seeElement(i).getValor();
+        }
+        for (int i = 0; i < suma - Detalles.SUPER8.getDetalle(); i += 100) {
+            Moneda a = new Moneda100();
+            monVu.addElemento(a);
+        }
+    }
     public int getNumCoca() {
         return depCoca.getSize();
     }

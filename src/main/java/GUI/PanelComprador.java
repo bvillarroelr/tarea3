@@ -77,9 +77,11 @@ public class PanelComprador extends JPanel implements ActionListener {
         int vuelto = 0;
 
         if(e.getSource() == coca) {
-            vuelto = c.Comprar(saldo,Detalles.COCA,pe.getE());
+
+            vuelto = c.Comprar(saldo,Detalles.serieCOCA,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
+
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Coca");
@@ -87,36 +89,40 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == fanta) {
-            vuelto = c.Comprar(saldo,Detalles.FANTA,pe.getE());
+            vuelto = c.Comprar(saldo,Detalles.serieFAN,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
+
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Fanta");
             pe.repaint();
         }
         else if(e.getSource() == sprite) {
-            vuelto = c.Comprar(saldo,Detalles.SPRITE,pe.getE());
+            vuelto = c.Comprar(saldo,Detalles.serieSPR,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
+
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Sprite");
             pe.repaint();
         }
         else if(e.getSource() == super8) {
-            vuelto = c.Comprar(saldo,Detalles.SUPER8,pe.getE());
+            vuelto = c.Comprar(saldo,Detalles.serieS8,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
+
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Super 8");
             pe.repaint();
         }
         else if(e.getSource() == snickers) {
-            vuelto = c.Comprar(saldo,Detalles.SNICKER,pe.getE());
+            vuelto = c.Comprar(saldo,Detalles.serieSN,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
+
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Snickers");
