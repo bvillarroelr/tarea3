@@ -25,6 +25,7 @@ public class PanelComprador extends JPanel implements ActionListener {
 
         rightPanel.add(new JLabel(" Saldo: $" + c.getSaldo())); // Aqui podemos agregar las opciones de monedas
         rightPanel.add(midrightPanel);
+
         midrightPanel.add(coca);
         coca.addActionListener(this);
         midrightPanel.add(super8);
@@ -37,8 +38,10 @@ public class PanelComprador extends JPanel implements ActionListener {
         sprite.addActionListener(this);
         midrightPanel.add(agregarMoneda);
         agregarMoneda.addActionListener(this);
+
         add(rightPanel, BorderLayout.EAST);
     }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
