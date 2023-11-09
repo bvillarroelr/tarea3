@@ -10,6 +10,7 @@ public class PanelComprador extends JPanel implements ActionListener {
     private PanelExpendedor pe;
     private Moneda m;
     private JButton coca, fanta, sprite, super8, snickers, agregarMoneda;
+    private JLabel DisplayedInfo, Saldo;
     public PanelComprador(Comprador c, PanelExpendedor pe) {
         this.m = new Moneda1000(); // Por defecto es una moneda de 1000
         setLayout(new BorderLayout());
@@ -21,14 +22,15 @@ public class PanelComprador extends JPanel implements ActionListener {
         sprite = new JButton("Sprite");
         super8 = new JButton("Super 8");
         snickers = new JButton("Snickers");
-        agregarMoneda = new JButton("Agregar monedas");
+        DisplayedInfo = new JLabel("Seleccione un Producto");
+        Saldo = new JLabel("Saldo: Usando una moneda de " + m.getValor());
 
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
         midrightPanel.setLayout(new GridLayout(3, 2));
 
-        rightPanel.add(new JLabel(" Saldo: $" + m.getValor())); // Aqui podemos agregar las opciones de monedas
+        rightPanel.add(Saldo);
         rightPanel.add(midrightPanel);
 
         midrightPanel.add(coca);
@@ -41,12 +43,13 @@ public class PanelComprador extends JPanel implements ActionListener {
         snickers.addActionListener(this);
         midrightPanel.add(sprite);
         sprite.addActionListener(this);
-        midrightPanel.add(agregarMoneda);
-        agregarMoneda.addActionListener(this);
+        midrightPanel.add(DisplayedInfo);
 
         add(rightPanel, BorderLayout.EAST);
     }
-
+    public void setInfo(Moneda n){
+        DisplayedInfo.setText("Vuelto" + n.getValor());
+    }
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -58,7 +61,8 @@ public class PanelComprador extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Con este esqueleto podemos comenzar a trabajar en qué acción efectuará cada botón. Rellené con casos ejemplo solamente. Conectar lógica del resto del código
         if(e.getSource() == coca) {
-            c.Comprar(m,Detalles.COCA,pe.getE());
+            DisplayedInfo.setText("Vuelto: " + c.Comprar(m,Detalles.COCA,pe.getE()));
+            Saldo.setText("Seleccione una moneda");
             System.out.println("Compraste una Coca");
             pe.repaint();
         }
@@ -66,6 +70,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             c.Comprar(m,Detalles.FANTA,pe.getE());
             System.out.println("Compraste una Fanta");
             pe.repaint();
+
         }
         else if(e.getSource() == sprite) {
             c.Comprar(m,Detalles.SPRITE,pe.getE());
