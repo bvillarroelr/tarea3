@@ -19,7 +19,5 @@ public class PanelPrincipal extends JPanel { ;
     public void paint (Graphics g) {
         super.paint(g);
         exp.paint(g);
-
-        // borré com.paint(g) porque mostraba 2 veces el JLabel de saldo
     }
 }
