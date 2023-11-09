@@ -10,7 +10,7 @@ import java.lang.Comparable;
  *
  * @version 1.0
  */
-abstract class Moneda implements Comparable<Moneda>{
+public abstract class Moneda implements Comparable<Moneda>{
     /**
      * Constructor de la clase "Moneda". Inicializa una moneda genérica.
      */

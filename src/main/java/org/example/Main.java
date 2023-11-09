@@ -1,4 +1,7 @@
 package org.example;
+
+import GUI.Ventana;
+
 /**
  * Metodo Main para probar expendedores y compradores
  */

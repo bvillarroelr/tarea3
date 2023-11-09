@@ -1,7 +1,6 @@
-package org.example;
+package GUI;
 
 
-import java.awt.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame {
