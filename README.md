@@ -4,5 +4,7 @@ Repositorio para la tarea 3 de la asignatura.
 - Martin Alonso Lara Castro
 - Benjamín Cristobal Villarroel Rubio
 ## Diagrama de clases
-(Sujeto a modificaciones)
-![Diagrama UML](UMLfinal_tarea2.png)
+GUI UML
+![Diagrama UML](GUI_UMLTarea3.png)
+UML Codigo
+![Diagrama UMLc](UMLfinal_tarea2.png)
