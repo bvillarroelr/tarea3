@@ -23,7 +23,7 @@ public class PanelComprador extends JPanel implements ActionListener {
     private PanelExpendedor pe;
     private Deposito<Moneda> saldo;
     private JButton coca, fanta, sprite, super8, snickers, m100,m500,m1000,m1500;
-    private JLabel saldoDisplay;
+    private JLabel saldoDisplay, lista,lista2;
     /**
      * Constructor de la clase PanelComprador, crea los botones y escuchadores ademas que organiza la interfaz de este Panel.
      *
@@ -46,14 +46,21 @@ public class PanelComprador extends JPanel implements ActionListener {
         m1000 = new JButton("Añadir 1000");
         m1500 = new JButton("Añadir 1500");
         saldoDisplay = new JLabel("Saldo: $0");
+        lista = new JLabel("CocaCola: $900 Sprite: $1100 Fanta: $1200");
+        lista2 = new JLabel("Snickers: $1000 Super8: $500");
 
         JPanel rightPanel = new JPanel();
         JPanel midrightPanel = new JPanel();
+        JPanel uprightPanel = new JPanel();
         rightPanel.setLayout(new GridLayout(3, 1));
-        midrightPanel.setLayout(new GridLayout(3, 3));
+        midrightPanel.setLayout(new GridLayout(5, 2));
+        uprightPanel.setLayout(new GridLayout(2, 1));
 
-        rightPanel.add(saldoDisplay);
+        rightPanel.add(uprightPanel);
+        uprightPanel.add(lista);
+        uprightPanel.add(lista2);
         rightPanel.add(midrightPanel);
+        rightPanel.add(saldoDisplay);
         midrightPanel.add(coca);
         coca.addActionListener(this);
         midrightPanel.add(super8);
@@ -74,6 +81,11 @@ public class PanelComprador extends JPanel implements ActionListener {
         m1500.addActionListener(this);
 
         add(rightPanel, BorderLayout.EAST);
+    }
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        showMonedas(g);
     }
     /**
      * Metodo para detectar acciones, va por casos segun el boton, en el caso de pedir un producto lo envia a la logica y actualiza los parametros de los Objetos nativos.
@@ -172,5 +184,25 @@ public class PanelComprador extends JPanel implements ActionListener {
             }
             saldoDisplay.setText("Saldo: $" + c);
         }
+        repaint();
+    }
+    public void showMonedas(Graphics g) {
+        int x = 50;
+        for (int i = 0; i < saldo.getSize(); i++) {
+            if (saldo.seeElement(i).equals(m100)) {
+                g.setColor(Color.LIGHT_GRAY); // Color para la moneda de 100
+                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 100
+            } else if (saldo.seeElement(i).equals(m500)) {
+                g.setColor(Color.GRAY); // Color para la moneda de 500
+                g.fillRect(0+40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 500
+            } else if (saldo.seeElement(i).equals(m1000)) {
+                g.setColor(Color.ORANGE); // Color para la moneda de 1000
+                g.fillRect(40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 1000
+            } else if (saldo.seeElement(i).equals(m1500)) {
+                g.setColor(Color.MAGENTA); // Color para la moneda de 1500
+                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 1500
+            }
+        }
+        repaint();
     }
 }

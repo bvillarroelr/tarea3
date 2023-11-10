@@ -29,5 +29,6 @@ public class PanelPrincipal extends JPanel { ;
     public void paint (Graphics g) {
         super.paint(g);
         exp.paint(g);
+        com.showMonedas(g);
     }
 }
