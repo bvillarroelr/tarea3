@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class PanelPrincipal extends JPanel { ;
     private Comprador c = new Comprador();
-    private PanelExpendedor exp = new PanelExpendedor(3, this);   // De aquí se define la cantidad de producto, y por ende, cuantos se veran en el expendedor
+    private PanelExpendedor exp = new PanelExpendedor(7, this);   // De aquí se define la cantidad de producto, y por ende, cuantos se veran en el expendedor
     private PanelComprador com = new PanelComprador(c,exp);
     /**
      * Constructor que configura el diseño y los componentes del panel.
