@@ -227,29 +227,6 @@ public class PanelExpendedor extends JPanel implements ActionListener {
             System.out.println("Recogiste el producto");
         }
     }
-    public void showMonedas(Graphics g,Deposito<Moneda> saldo) {
-        Moneda m100 = new Moneda100();
-        Moneda m500 = new Moneda500();
-        Moneda m1000 = new Moneda1000();
-        Moneda m1500 = new Moneda1500();
-        int x = 50;
-        for (int i = 0; i < saldo.getSize(); i++) {
-            if (saldo.seeElement(i).equals(m100)) {
-                g.setColor(Color.LIGHT_GRAY); // Color para la moneda de 100
-                g.fillRect(40 * i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 100
-            } else if (saldo.seeElement(i).equals(m500)) {
-                g.setColor(Color.GRAY); // Color para la moneda de 500
-                g.fillRect(0 + 40 * i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 500
-            } else if (saldo.seeElement(i).equals(m1000)) {
-                g.setColor(Color.ORANGE); // Color para la moneda de 1000
-                g.fillRect(40 * i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 1000
-            } else if (saldo.seeElement(i).equals(m1500)) {
-                g.setColor(Color.MAGENTA); // Color para la moneda de 1500
-                g.fillRect(40 * i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 1500
-            }
-        }
-        repaint();
-    }
     public int getCual() {
         return cual;
     }
