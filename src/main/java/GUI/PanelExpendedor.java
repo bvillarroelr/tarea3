@@ -100,7 +100,7 @@ public class PanelExpendedor extends JPanel implements ActionListener {
         g.setColor(Color.BLACK);
         g.fillRect(340,465,120,80);
         g.fillRect(520,465,120,80);
-        
+
         if(verificaSiPintaProducto && cual == 1) {
             g.setColor(Color.RED);
             g.fillRect(360,470,20,50);
@@ -128,10 +128,11 @@ public class PanelExpendedor extends JPanel implements ActionListener {
 
 
         if(verificaSiPintaVuelto) {
-            ;   // aqui debera pintar monedas
+            ;
         }
 
         // Rellenamos los depósitos
+
         paintCoca(g,e);
         paintFanta(g,e);
         paintSprite(g,e);
