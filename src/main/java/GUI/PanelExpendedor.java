@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  */
 public class PanelExpendedor extends JPanel implements ActionListener {
     private Expendedor e;
-    private Comprador c;
+    private int cual;
     private boolean verificaSiPintaProducto = false;
     private boolean verificaSiPintaVuelto = false;
     private JButton depMon, depProd;
@@ -23,11 +23,9 @@ public class PanelExpendedor extends JPanel implements ActionListener {
      *
      * @param numProducto Cantidad de productos en la maquina.
      * @param p           PanelPrincipal asociado al panel.
-     * @param c           Referenncia de Comprador del panel.
      */
-    public PanelExpendedor(int numProducto, PanelPrincipal p, Comprador c){
+    public PanelExpendedor(int numProducto, PanelPrincipal p){
         this.numProducto = numProducto;
-        this.c = c;
         // Creamos botones que retiraran el producto y el vuelto
         depMon = new JButton("asd");
         depMon.setBounds(520,465,120,80);
@@ -102,14 +100,31 @@ public class PanelExpendedor extends JPanel implements ActionListener {
         g.setColor(Color.BLACK);
         g.fillRect(340,465,120,80);
         g.fillRect(520,465,120,80);
-        if(verificaSiPintaProducto) {
+        if(verificaSiPintaProducto && cual == 1) {
             g.setColor(Color.RED);
             g.fillRect(360,470,20,50);
         }
-        else {
+        else if(verificaSiPintaProducto && cual == 2) {
+            g.setColor(Color.ORANGE);
+            g.fillRect(360,470,20,50);
+        }
+        else if(verificaSiPintaProducto && cual == 3) {
+            g.setColor(Color.GREEN);
+            g.fillRect(360,470,20,50);
+        }
+        else if(verificaSiPintaProducto && cual == 4) {
+            g.setColor(Color.DARK_GRAY);
+            g.fillRect(360,470,20,50);
+        }
+        else if(verificaSiPintaProducto && cual == 5) {
+            g.setColor(Color.LIGHT_GRAY);
+            g.fillRect(360,470,20,50);
+        }
+        else{
             g.setColor(Color.BLACK);
             g.fillRect(360,470,20,50);
         }
+
 
         if(verificaSiPintaVuelto) {
             ;   // aqui debera pintar monedas
@@ -201,5 +216,12 @@ public class PanelExpendedor extends JPanel implements ActionListener {
             repaint();
             System.out.println("Recogiste el producto");
         }
+    }
+    public int getCual() {
+        return cual;
+    }
+
+    public void setCual(int cual) {
+        this.cual = cual;
     }
 }

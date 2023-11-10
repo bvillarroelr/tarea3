@@ -85,7 +85,7 @@ public class PanelComprador extends JPanel implements ActionListener {
         int vuelto = 0;
 
         if(e.getSource() == coca) {
-
+            pe.setCual(1);
             vuelto = c.Comprar(saldo,Detalles.serieCOCA,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
@@ -97,6 +97,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.repaint();
         }
         else if(e.getSource() == fanta) {
+            pe.setCual(2);
             vuelto = c.Comprar(saldo,Detalles.serieFAN,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
@@ -104,9 +105,11 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Fanta");
+            pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == sprite) {
+            pe.setCual(3);
             vuelto = c.Comprar(saldo,Detalles.serieSPR,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
@@ -114,9 +117,11 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste una Sprite");
+            pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == super8) {
+            pe.setCual(4);
             vuelto = c.Comprar(saldo,Detalles.serieS8,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
@@ -124,9 +129,11 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Super 8");
+            pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == snickers) {
+            pe.setCual(5);
             vuelto = c.Comprar(saldo,Detalles.serieSN,pe.getE());
             saldo.clearDeposito();
             saldo.copiarADeposito(pe.getE().getVuelto());
@@ -134,6 +141,7 @@ public class PanelComprador extends JPanel implements ActionListener {
             pe.getE().getVuelto().clearDeposito();
             saldoDisplay.setText("Saldo: $" + vuelto);
             System.out.println("Compraste un Snickers");
+            pe.setVerificaSiPintaProducto(true);
             pe.repaint();
         }
         else if(e.getSource() == m100) {
