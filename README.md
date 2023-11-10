@@ -6,5 +6,6 @@ Repositorio para la tarea 3 de la asignatura.
 ## Diagrama de clases
 GUI UML
 ![Diagrama UML](GUI_UMLTarea3.png)
+
 UML Codigo
 ![Diagrama UMLc](UMLfinal_tarea2.png)
