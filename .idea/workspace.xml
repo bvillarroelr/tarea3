@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="00e46cff-3a61-4b79-a300-155efc07a77f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UMLfinal_tarea2.png" beforeDir="false" afterPath="$PROJECT_DIR$/UMLfinal_tarea2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelComprador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelExpendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelExpendedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PanelPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Benjamín/OneDrive/Universidad/2023/4to semestre/Programación II/Tareas/tarea3"
   }
 }]]></component>

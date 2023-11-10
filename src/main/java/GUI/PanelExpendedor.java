@@ -2,11 +2,19 @@ package GUI;
 
 import org.example.Comprador;
 import org.example.Expendedor;
+import org.example.Moneda;
+import org.example.Deposito;
+import org.example.Moneda100;
+import org.example.Moneda500;
+import org.example.Moneda1500;
+import org.example.Moneda1000;
+
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 /**
  * PanelExpendedor es una clase que representa el panel del expendedor en la interfaz gráfica.
  * Esta clase crea y ordena representaciones gráficas de los depósitos y sus productos
@@ -201,5 +209,28 @@ public class PanelExpendedor extends JPanel implements ActionListener {
             repaint();
             System.out.println("Recogiste el producto");
         }
+    }
+    public void showMonedas(Graphics g,Deposito<Moneda> saldo) {
+        Moneda m100 = new Moneda100();
+        Moneda m500 = new Moneda500();
+        Moneda m1000 = new Moneda1000();
+        Moneda m1500 = new Moneda1500();
+        int x = 50;
+        for (int i = 0; i < saldo.getSize(); i++) {
+            if (saldo.seeElement(i).equals(m100)) {
+                g.setColor(Color.LIGHT_GRAY); // Color para la moneda de 100
+                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 100
+            } else if (saldo.seeElement(i).equals(m500)) {
+                g.setColor(Color.GRAY); // Color para la moneda de 500
+                g.fillRect(0+40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 500
+            } else if (saldo.seeElement(i).equals(m1000)) {
+                g.setColor(Color.ORANGE); // Color para la moneda de 1000
+                g.fillRect(40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 1000
+            } else if (saldo.seeElement(i).equals(m1500)) {
+                g.setColor(Color.MAGENTA); // Color para la moneda de 1500
+                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 1500
+            }
+        }
+        repaint();
     }
 }

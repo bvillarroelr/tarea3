@@ -82,10 +82,8 @@ public class PanelComprador extends JPanel implements ActionListener {
 
         add(rightPanel, BorderLayout.EAST);
     }
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        showMonedas(g);
+    public Deposito<Moneda> getSaldo() {
+        return saldo;
     }
     /**
      * Metodo para detectar acciones, va por casos segun el boton, en el caso de pedir un producto lo envia a la logica y actualiza los parametros de los Objetos nativos.
@@ -184,25 +182,6 @@ public class PanelComprador extends JPanel implements ActionListener {
             }
             saldoDisplay.setText("Saldo: $" + c);
         }
-        repaint();
-    }
-    public void showMonedas(Graphics g) {
-        int x = 50;
-        for (int i = 0; i < saldo.getSize(); i++) {
-            if (saldo.seeElement(i).equals(m100)) {
-                g.setColor(Color.LIGHT_GRAY); // Color para la moneda de 100
-                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 100
-            } else if (saldo.seeElement(i).equals(m500)) {
-                g.setColor(Color.GRAY); // Color para la moneda de 500
-                g.fillRect(0+40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 500
-            } else if (saldo.seeElement(i).equals(m1000)) {
-                g.setColor(Color.ORANGE); // Color para la moneda de 1000
-                g.fillRect(40*i, 50, 300, 150); // Dibuja un rectángulo para la moneda de 1000
-            } else if (saldo.seeElement(i).equals(m1500)) {
-                g.setColor(Color.MAGENTA); // Color para la moneda de 1500
-                g.fillRect(40*i, 50, 300, 105); // Dibuja un rectángulo para la moneda de 1500
-            }
-        }
-        repaint();
+        pe.repaint();
     }
 }

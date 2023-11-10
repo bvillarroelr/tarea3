@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class PanelPrincipal extends JPanel { ;
     private Comprador c = new Comprador();
-    private PanelExpendedor exp = new PanelExpendedor(3, this, c);
+    private PanelExpendedor exp = new PanelExpendedor(3, this,c);
     private PanelComprador com = new PanelComprador(c,exp);
     /**
      * Constructor que configura el diseño y los componentes del panel.
@@ -29,6 +29,5 @@ public class PanelPrincipal extends JPanel { ;
     public void paint (Graphics g) {
         super.paint(g);
         exp.paint(g);
-        com.showMonedas(g);
     }
 }
